@@ -53,9 +53,9 @@ class Main {
     sql  = "SELECT about.NameId, about.Name, about.Gender1, about.Gender2, about.Height, about.Weight, ";
     sql += "category.Type1, category.Type2, category.Species, ";
     sql += "evolution.StarterPokemon, evolution.MiddlePokemon, evolution.FinalPokemon, evolution.FinalPokemon2 ";
-    sql += "FROM \"Pokemon Data - About\" AS about ";
-    sql += "INNER JOIN \"Pokemon Data - Category\" AS category ON about.NameId = category.NameId ";
-    sql += "INNER JOIN \"Pokemon Data - Evolution\" AS evolution ON about.NameId = evolution.NameId ";
+    sql += "FROM \"about\" AS about ";
+    sql += "INNER JOIN \"category\" AS category ON about.NameId = category.NameId ";
+    sql += "INNER JOIN \"evolution\" AS evolution ON about.NameId = evolution.NameId ";
     server.createContext("/pokemon", new RouteHandler(db, sql));
    
    
